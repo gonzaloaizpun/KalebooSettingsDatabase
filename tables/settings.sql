@@ -54,20 +54,22 @@ DROP TABLE IF EXISTS `setting_attributes`;
 
 CREATE TABLE `setting_attributes` (
  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
- `id_setting_attribute_type` int(10) unsigned NOT NULL,
+ `id_setting` int(10) unsigned NOT NULL,
+ `id_attribute` int(10) unsigned NOT NULL,
  `description` varchar(256) NOT NULL,
 
  PRIMARY KEY (`id`),
- KEY `id_setting_attribute_type` (`id_setting_attribute_type`)
+ KEY `id_attribute` (`id_attribute`),
+ KEY `id_setting` (`id_setting`)
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 # ================================================================================================
 
-DROP TABLE IF EXISTS `setting_attribute_types`;
+DROP TABLE IF EXISTS `attributes`;
 
-CREATE TABLE `setting_attribute_types` (
+CREATE TABLE `attributes` (
  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
  `description` varchar(256) NOT NULL,
 
